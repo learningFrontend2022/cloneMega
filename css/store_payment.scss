@@ -422,7 +422,130 @@ border-top: 1px solid #434343;
 
 }
 
+//약관동의
+dl, dd, dt{
+    margin: 0; padding: 0;
+}
+.bg-chk {
+    display: inline-block;
+    position: relative;
+    //inputcheck
+    [type="checkbox"] {
+        position: absolute;
+        left: -9999px;
+      }
+    //label
+    label{
+        font-size: 18px;
+        color: #222;
+        font-weight: 900;
+        position: relative;
+        padding: 0 0 0 34px;
+        line-height: 28px;
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 28px;
+            height: 28px;
+            margin: -14px 0 0 0;
+            cursor: pointer;
+            background: url('../img/bg-checkbox.png') no-repeat 0 0;
+        }
+    }
+    
+  }
 
+dl{
+    padding-top: 35px; display: block;   
+    dt{
+        padding-bottom: 10px;
+    } 
+}
+.term-list{
+    dd{
+        position: relative;
+        margin-top: 10px;
+        border: 1px solid #d8d9db;
+        padding: 0 19px;
+        height: 38px;
+        line-height: 36px;
+        border-radius: 4px;
+        font-size: 15px;
+        a{
+            position: absolute;
+            display: block;
+            top: 13px;
+            right: 19px;
+            line-height: 15px;
+            font-size: 14px;
+            color: #444;
+            text-decoration: underline;
+        }
+    }
+}
+
+//포인트 결제
+.pointarea {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    .itm {
+        width: 540px;
+        padding: 20px 30px;
+        border: 2px solid #eaeaea;
+        .tit span {
+            color: #01738b;
+            font-weight: 900;
+          }
+          .intt {
+            position: relative;
+            padding-right: 94px;
+            label {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 96px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                background-color: #666;
+                color: #fff;
+                font-size: 15px;
+              }
+          }
+      }
+      .list {
+        text-align: left;
+        padding-top: 20px;
+        li {
+            position: relative;
+            font-size: 15px;
+            color: #339eb2;
+            line-height: 15px;
+            margin-bottom: 10px;
+            padding-left: 11px;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 1px;
+                width: 3px;
+                height: 3px;
+                background-color: #339eb2;
+                transform: translate(0,-50%);
+              }
+
+          }
+
+       
+      }
+
+  }
 
 //속성
 table{
