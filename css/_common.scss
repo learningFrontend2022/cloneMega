@@ -133,6 +133,19 @@ header{
                 display: none;
             }
         }
+        nav{
+            width: 100%;
+            min-width: 1140px;
+            height: 720px;
+            background-color: $st;
+            position: absolute;
+            left: 0; top: 80px;
+            z-index: 100;
+            display: none;
+        }
+        nav.active{
+            display: inline-block;
+        }
     }
     .menu-right{
         display: flex;

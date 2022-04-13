@@ -11,7 +11,7 @@ let exChange = function(){
     success:function(data){
         let item = '';
         let elUp_li;
-     
+        
         let more = function(n,m){
             $.each(data.data,function(key,v){
                 if(key >= n && key < m ){
@@ -104,9 +104,8 @@ let exChange = function(){
         }
 
         function view(){
-            elUp_li.forEach(function(p){
-        })
-}
+            elUp_li.forEach(function(p){})
+        }
 
 
         more(0,12, 'all');
@@ -125,11 +124,6 @@ let exChange = function(){
                     elBtn_close.classList.add('active')
                 }
             }
-
-
-
-
-            
         }
     });
 }

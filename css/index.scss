@@ -32,10 +32,11 @@ main{
     }
 }
 .box-office{
-    width: 100%; height: 810px;
+    height: 810px;
     overflow: hidden;
     .bg{
         width: 100%; height: 840px;
+        min-width: 1140px;
         overflow: hidden;
         position: absolute;
         left: 0; top: -80px;
@@ -169,28 +170,35 @@ main{
         }
     }
     .scroll{
-        margin: 100px 0 0;
+        min-width: 1140px;
+        margin: 80px 0 0;
         text-align: center;
-        animation: scroll 3s linear infinite;
+        animation: scroll 2s ease infinite;
     }
     @keyframes scroll {
         0% { transform: translateY(0);}
-        50% { transform: translateY(-40px);}
+        50% { transform: translateY(-20px);}
         100% { transform: translateY(0);}
     }
 }
 .benefit{
-    position: relative;
+    position: relative; height: 845px;
     &::before{
         content: '';
         width: 100%; height: 330px;
+        min-width: 1140px;
         background-color: $mc;
         position: absolute;
-        bottom: 0; left: 0;
+        top: 515px; left: 0;
         z-index: -1;
     }
-    .b-box{
+    .tit {
         display: flex;
+        a {display: inline-block; position: relative; font-size: 0;}
+        a::before {content: ''; background: url('../img/main/btn-more-cross-purple.png') no-repeat; width: 16px; height: 16px; position: absolute; top: 16px; right: 16px;}
+    }
+    .b-box{
+        display: flex; align-items: end;
         .box1{
             .box1-1 p:nth-of-type(1){
                 display: flex;
@@ -215,23 +223,35 @@ main{
                 top: 0; left: 0;
             }
             .box1-2{
-                display: flex;
+                display: flex; 
+                p img {width: 100%; border-radius: 5px;}
+                p:nth-of-type(1) {width: 441px;}
+                p:nth-of-type(2) {width: 204px; margin-left: 20px;}
             }
+        }
+        .box2 {
+            width: 415px;
+            img {border-radius: 5px;}
         }
     }
     .b-items{
         height: 132px;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         p{
+            padding-top: 50px;
             display: flex;
             flex-direction: column;
+            position: relative; text-align: center; align-items: center; width: 20%;
             img{
-                width: 100%;
-                height: 60px;
+                width: max-content;
+                height: 45px;
             }
             span{
                 display: inline-block;
+                position: absolute;
+                color: #fff; padding: 60px 0 0 0;
+                width: max-content; cursor: pointer;
             }
         }
     }
@@ -239,13 +259,17 @@ main{
 .info{
     div{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; margin-bottom: 50px;
         p{
-            width: 170px; height: 170px;
-            overflow: hidden;
+            width: 170px; height: 170px; position: relative;
+            overflow: hidden; border-radius: 5px; box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, .2);
             img{
                 width: 100%;
             }
+            &:hover img {transform: translateY(-170px);}
+            &:nth-of-type(1)::after {position: absolute;
+                content: "NEW"; top: 10px; right: 10px; width: 50px; height: 22px; line-height: 25px; text-align: center;
+                color: #fff; font-size: 13px; border-radius: 5px; background: $sc; text-indent: 0; display: block;}
         }
     }
 
