@@ -16,9 +16,10 @@ fetch("./incom.html")
 
     const elBurger = document.querySelector('.bugermenu');
     const elBp = document.querySelector('.bugermenu p');
+    const elNav = document.querySelector('header nav');
     const elMy = document.querySelector('.my');
+    const elMycontents = document.querySelector('.my-contents');
     const elSearch = document.querySelector('.search');
-    const elNav = document.querySelector('.bugermenu nav');
     const elLogin = document.querySelector('.m-login');
     const elLog = document.querySelector('.login');
     const elClose = document.querySelector('.log-close');
@@ -27,6 +28,7 @@ fetch("./incom.html")
     elBurger.onclick = function(){
         elBp.classList.toggle('active');
         elMy.classList.remove('active');
+        elMycontents.classList.remove('active');
         elSearch.classList.remove('active');
         if(elBp.classList.contains('active')){
             elNav.classList.add('active');
@@ -37,18 +39,27 @@ fetch("./incom.html")
     // 멤버쉽
     elMy.onclick = function(){
         elMy.classList.toggle('active');
+        elMycontents.classList.toggle('active');
         elBp.classList.remove('active');
+        elNav.classList.remove('active');
         elSearch.classList.remove('active');
     }
     // 검색
     elSearch.onclick = function(){
         elSearch.classList.toggle('active');
         elMy.classList.remove('active');
+        elMycontents.classList.remove('active');
         elBp.classList.remove('active');
+        elNav.classList.remove('active');
     }
     // 로그인
     elLogin.onclick = function(e){
         e.preventDefault();
+        elBp.classList.remove('active');
+        elNav.classList.remove('active');
+        elMy.classList.remove('active');
+        elMycontents.classList.remove('active');
+        elSearch.classList.remove('active');
         // 로그인창 불러오기
         elLog.classList.add('active');
         window.onscroll = function(){
