@@ -1,8 +1,8 @@
 @import '_common';
 
-.inner {width: 1140px; margin: 0 auto; padding: 0 20px; position: relative;}
 .container {
     width: 100%; margin: 0 auto; position: relative;
+    .inner {width: 1140px; margin: 0 auto; padding: 0 20px; position: relative;}    
     .gnb {
         width: 100%; height: 42px; background: #f8f8fa;
         .location {
@@ -178,18 +178,16 @@
 
         }
     }
-}
-
-.quick_w {
+    .quick_w {
         position: relative;
-    .quick {
-        position: fixed; left: 50%; transform: translateX(560px); bottom: 20px;
-        img {width: inherit;}
+        .quick {
+            position: fixed; left: 50%; transform: translateX(560px); bottom: 20px;
+            img {width: inherit;}
+        }
+        .quick.active {bottom: 250px;}
     }
-    .quick.active {bottom: 250px;}
-}
-.lock {overflow: hidden; position: relative;}
-.pop_w { 
+    .lock {overflow: hidden; position: relative;}
+    .pop_w { 
     width: 100%; height: 100vh; z-index: 99999; position: fixed; top: 0; left: 0; display: none;
     .back {
         width: 100%; height: 100%; background: rgba(0,0,0,.7); position: relative;
@@ -215,9 +213,11 @@
             }
         }
     }
-    
+
+    }
+
+    .mt-20 {margin-top: 20px;}
+    .mt-40 {margin-top: 40px;}
+    .pb-100 {padding-bottom: 100px;}
 }
 
-.mt-20 {margin-top: 20px;}
-.mt-40 {margin-top: 40px;}
-.pb-100 {padding-bottom: 100px;}
