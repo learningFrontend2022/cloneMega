@@ -133,19 +133,6 @@ header{
                 display: none;
             }
         }
-        nav{
-            width: 100%;
-            min-width: 1140px;
-            height: calc(100vh - 80px);
-            background-color: $st;
-            position: absolute;
-            left: 0; top: 80px;
-            z-index: 100;
-            display: none;
-        }
-        nav.active{
-            display: inline-block;
-        }
     }
     .menu-right{
         display: flex;
@@ -182,6 +169,73 @@ header{
                 display: none;
             }
         }
+    }
+    nav{
+        width: 100%;
+        min-width: 1140px;
+        height: calc(100vh - 80px);
+        background-color: $st;
+        position: absolute;
+        left: 0; top: 80px;
+        z-index: 100;
+        display: none;
+        .nav-tit{
+            margin: 60px auto 40px;
+            font-size: 1.8em;
+            font-weight: 400;
+            color: #fff;
+        } 
+        .sitemap{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .map{
+                width: 160px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                align-items: center;
+                h4{
+                    width: 100%;
+                    padding: 8px;
+                    color: #fff;
+                    font-size: 1.2em;
+                    text-align: center;
+                    border-top: 1px solid rgba(114, 114, 114, 0.8);
+                    border-bottom: 1px solid rgba(114, 114, 114,.8);
+                    
+                }
+                p{
+                    width: 100%;
+                    margin-top: 16px;
+                    color: $sl;
+                    text-align: center;
+                }
+            }
+        }
+        .sitemap:nth-of-type(2){
+            width: 770px;
+            transform: translateX(-186px) translateY(-200px);
+            .map{
+                align-items: left;
+            }
+        }
+    }
+    nav.active{
+        display: inline-block;
+    }
+    .my-contents{
+        width: 100%;
+        min-width: 1140px; height: 300px; 
+        background-color: $sc;
+        position: absolute;
+        left: 0; top: 80px;
+        z-index: 10000;
+        display: none;
+    }
+    .my-contents.active{
+        display: block;
     }
 }
 
@@ -317,28 +371,6 @@ header{
                 }
                 .id_chk {
                     padding: 15px 0 35px 0;
-                    a {
-                        display: inline-block; 
-                        color: #3d7db7;
-                    }
-                    a i {
-                        overflow: hidden; 
-                        display: inline-block; 
-                        width: 36px; height: 16px; 
-                        margin-left: 4px; 
-                        line-height: 14px;
-                        font-size: .8em; 
-                        border: 1px solid #3d7db7; 
-                        text-align: center; 
-                        vertical-align: middle; 
-                        color: #3d7db7; 
-                        font-style: normal;
-                    }
-                    &::after {
-                        content: ''; 
-                        display: block; 
-                        clear: both;
-                    }
                 }
                 .btn_login {
                     button {
