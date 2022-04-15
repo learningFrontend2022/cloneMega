@@ -20,9 +20,11 @@ fetch("./incom.html")
     const elMy = document.querySelector('.my');
     const elMycontents = document.querySelector('.my-contents');
     const elSearch = document.querySelector('.search');
+    const elSearchcon = document.querySelector('.search-contents');
     const elLogin = document.querySelector('.m-login');
     const elLog = document.querySelector('.login');
     const elClose = document.querySelector('.log-close');
+    const elMyLog = document.querySelector('.my-contents button');
 
     // 버거메뉴
     elBurger.onclick = function(){
@@ -30,6 +32,7 @@ fetch("./incom.html")
         elMy.classList.remove('active');
         elMycontents.classList.remove('active');
         elSearch.classList.remove('active');
+        elSearchcon.classList.remove('active');
         if(elBp.classList.contains('active')){
             elNav.classList.add('active');
         }else{
@@ -43,10 +46,25 @@ fetch("./incom.html")
         elBp.classList.remove('active');
         elNav.classList.remove('active');
         elSearch.classList.remove('active');
+        elSearchcon.classList.remove('active');
+    }
+    elMyLog.onclick = function(){
+        elMy.classList.toggle('active');
+        elMycontents.classList.toggle('active');
+        elBp.classList.remove('active');
+        elNav.classList.remove('active');
+        elSearch.classList.remove('active');
+        elSearchcon.classList.remove('active');
+        // 로그인창 불러오기
+        elLog.classList.add('active');
+        window.onscroll = function(){
+            window.scrollTo(0, 0); 
+        };
     }
     // 검색
     elSearch.onclick = function(){
         elSearch.classList.toggle('active');
+        elSearchcon.classList.toggle('active');
         elMy.classList.remove('active');
         elMycontents.classList.remove('active');
         elBp.classList.remove('active');
@@ -60,6 +78,7 @@ fetch("./incom.html")
         elMy.classList.remove('active');
         elMycontents.classList.remove('active');
         elSearch.classList.remove('active');
+        elSearchcon.classList.remove('active');
         // 로그인창 불러오기
         elLog.classList.add('active');
         window.onscroll = function(){
