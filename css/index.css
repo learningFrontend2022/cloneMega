@@ -312,7 +312,7 @@ header .my-contents button {
   padding: 4px 30px;
   display: block;
   border: 1px solid #fff;
-  border-radius: 10px;
+  border-radius: 4px;
   color: #fff;
   cursor: pointer;
 }
@@ -652,7 +652,7 @@ main {
 }
 
 main h3 {
-  padding: 50px 0 40px;
+  padding: 80px 0 40px;
   font-size: 2em;
   font-weight: 400;
   letter-spacing: -1px;
@@ -660,7 +660,7 @@ main h3 {
 }
 
 .box-office {
-  height: 810px;
+  height: 820px;
   overflow: hidden;
 }
 
@@ -745,7 +745,6 @@ main h3 {
 }
 
 .box-office .box-list {
-  margin: 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -970,25 +969,53 @@ main h3 {
           align-items: flex-start;
 }
 
-.benefit .b-box .box1 .box1-1 p:nth-of-type(2) {
+.benefit .b-box .box1 .bene-remote {
   position: relative;
 }
 
-.benefit .b-box .box1 .box1-1 p:nth-of-type(2)::before {
+.benefit .b-box .box1 .remote-pre {
+  position: absolute;
+  left: 220px;
+  top: -45px;
+  cursor: pointer;
+}
+
+.benefit .b-box .box1 .remote-next {
+  position: absolute;
+  left: 240px;
+  top: -45px;
+  cursor: pointer;
+}
+
+.benefit .b-box .box1 .remote-stop {
+  position: absolute;
+  left: 260px;
+  top: -45px;
+  cursor: pointer;
+}
+
+.benefit .b-box .box1 .remote-start {
+  position: absolute;
+  left: 280px;
+  top: -45px;
+  cursor: pointer;
+}
+
+.benefit .b-box .box1 .bene-remote::before {
   content: '';
   width: 200px;
   border-top: 2px solid #E2E2E2;
   position: absolute;
-  top: 0;
+  top: -40px;
   left: 0;
 }
 
-.benefit .b-box .box1 .box1-1 p:nth-of-type(2)::after {
+.benefit .b-box .box1 .bene-remote::after {
   content: '';
   width: 100px;
   border-top: 2px solid #351F66;
   position: absolute;
-  top: 0;
+  top: -40px;
   left: 0;
 }
 
@@ -996,6 +1023,11 @@ main h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.benefit .b-box .box1 .box1-2 p {
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .benefit .b-box .box1 .box1-2 p img {
@@ -1014,6 +1046,8 @@ main h3 {
 
 .benefit .b-box .box2 {
   width: 415px;
+  -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .benefit .b-box .box2 img {
@@ -1061,7 +1095,6 @@ main h3 {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  cursor: pointer;
 }
 
 .info div {
@@ -1071,7 +1104,7 @@ main h3 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 200px;
 }
 
 .info div p {
