@@ -117,28 +117,42 @@ main{
             .summary{
                 display: none;
             }
-            p{
+            div{
                 width: 100%;
                 margin: 12px 0;
-                // padding: 0 4px;
+                position: relative;
             }
-            p span{
+            p{
                 display: inline-block;
                 width: 80px; height: 36px;
                 line-height: 36px;
                 border: 1px solid #555;
                 border-radius: 4px;
                 background-color:rgba(0,0,0,0.4);
+                position: absolute;
+                left: 0; top: 0;
+                cursor: pointer;
             }
-            p span img{
-                margin: 0 4px 4px 0;
+            p span:nth-of-type(1){
+                width: 17px;
+                margin-right: 4px;
+                display: inline-block;
+                overflow: hidden;
+                position: absolute;
+                left: 12px; top: 6px;
             }
-            p button{
+            p span:nth-of-type(2){
+                position: absolute;
+                left: 36px; top: 7px;
+            }
+            div button{
                 width: 160px; height: 36px;
                 line-height: 34px;
                 color: #fff;
                 border-radius: 4px;
                 background-color: $sc;
+                position: absolute;
+                right: 0; top: 0;
                 cursor: pointer;
             }
         }
