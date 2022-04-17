@@ -29,7 +29,7 @@ async function banner(){
             elBoxlist.innerHTML = figure;
             elBg.src = data.data[0].image;
 
-        const elBoking = document.querySelectorAll('.box-list figure p button');
+        const elBoking = document.querySelectorAll('.box-list figure div button');
         const elLike = document.querySelectorAll('.box-list figure p span');
 
         // 좋아요 버튼
@@ -48,3 +48,6 @@ async function banner(){
     })
 }
 banner();
+
+// 혜택 슬라이드
+const elBenefit = document.querySelector('.box1-1 p');
