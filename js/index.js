@@ -1,6 +1,6 @@
 const elBoxlist = document.querySelector('.box-list');
+const elBg = document.querySelector('.bg img');
 async function banner(){
-
     await fetch("./js/movie_list.json")
     .then(function(response) {
         return response.json();
@@ -15,18 +15,23 @@ async function banner(){
                                     <img src="./img/main/bg-main-movie-rank.png"/>
                                 </figcaption>
                                 <div class="summary">${data.data[i].story}</div>
-                                <p>
-                                    <span><img src="./img/main/ico-heart-toggle-gray.png" alt="star">${data.data[i].like}</span>
+                                <div>
+                                    <p>
+                                        <span>
+                                            <img src="./img/main/ico-heart-toggle-main.png" alt="star">
+                                        </span>
+                                        <span>${data.data[i].like}</span>
+                                    </p>
                                     <button>예매</button>
-                                </p>
+                                </div>
                             </figure>`;
             }
             elBoxlist.innerHTML = figure;
+            elBg.src = data.data[0].image;
 
         const elBoking = document.querySelectorAll('.box-list figure p button');
         const elLike = document.querySelectorAll('.box-list figure p span');
 
-        console.log(elBoking, elLike)
         // 좋아요 버튼
         elLike.forEach(function(v){
             v.onclick = function () {
