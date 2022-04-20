@@ -730,14 +730,16 @@ main h3 {
 }
 
 .box-office .contents-title h2 {
-  padding-bottom: 5px;
+  margin-bottom: 40px;
   display: inline-block;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   font-size: 1.0667em;
 }
 
 .box-office .contents-title p {
+  margin-bottom: 10px;
   color: #E2E2E2;
+  font-weight: 100;
   line-height: 16px;
   position: absolute;
   bottom: 0;
@@ -955,18 +957,43 @@ main h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.benefit .b-box .box1 .box1-1 p:nth-of-type(1) {
+.benefit .b-box .box1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+}
+
+.benefit .b-box .box1 .event {
+  height: 325px;
+  display: inline-block;
+  position: relative;
+}
+
+.benefit .b-box .box1 .event p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: start;
       -ms-flex-align: start;
-          align-items: flex-start;
+          align-items: start;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .benefit .b-box .box1 .bene-remote {
@@ -976,47 +1003,49 @@ main h3 {
 .benefit .b-box .box1 .remote-pre {
   position: absolute;
   left: 220px;
-  top: -45px;
+  top: -65px;
   cursor: pointer;
 }
 
 .benefit .b-box .box1 .remote-next {
   position: absolute;
   left: 240px;
-  top: -45px;
+  top: -65px;
   cursor: pointer;
 }
 
 .benefit .b-box .box1 .remote-stop {
   position: absolute;
   left: 260px;
-  top: -45px;
+  top: -65px;
   cursor: pointer;
 }
 
 .benefit .b-box .box1 .remote-start {
   position: absolute;
   left: 280px;
-  top: -45px;
+  top: -65px;
   cursor: pointer;
 }
 
-.benefit .b-box .box1 .bene-remote::before {
-  content: '';
+.benefit .b-box .box1 .bene-remote span:nth-of-type(1) {
+  display: inline-block;
   width: 200px;
   border-top: 2px solid #E2E2E2;
   position: absolute;
-  top: -40px;
+  top: -60px;
   left: 0;
 }
 
-.benefit .b-box .box1 .bene-remote::after {
-  content: '';
-  width: 100px;
+.benefit .b-box .box1 .bene-remote span:nth-of-type(2) {
+  display: inline-block;
+  width: 200px;
   border-top: 2px solid #351F66;
   position: absolute;
-  top: -40px;
-  left: 0;
+  top: -60px;
+  left: -50px;
+  -webkit-transform: scaleX(50%);
+          transform: scaleX(50%);
 }
 
 .benefit .b-box .box1 .box1-2 {

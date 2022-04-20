@@ -1,0 +1,12 @@
+{
+    "benefit":[
+        {
+            "src1":"./img/main/b-1.jpg",
+            "src2":"./img/main/b-11.jpg"
+        },
+        {
+            "src1":"./img/main/b-2.jpg",
+            "src2":"./img/main/b-21.jpg"
+        }
+    ]
+}
