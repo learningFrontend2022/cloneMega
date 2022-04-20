@@ -80,13 +80,15 @@ main{
         padding: 80px 0 0;
         position: relative;
         h2{
-            padding-bottom: 5px;
+            margin-bottom: 40px;
             display: inline-block;
             border-bottom: 2px solid rgba(255,255,255,0.2);
             font-size: 1.0667em;
         }
         p{
+            margin-bottom: 10px;
             color: $sl;
+            font-weight: 100;
             line-height: 16px;
             position: absolute;
             bottom: 0; right: 0;
@@ -219,52 +221,63 @@ main{
         a::before {content: ''; background: url('../img/main/btn-more-cross-purple.png') no-repeat; width: 16px; height: 16px; position: absolute; top: 16px; right: 16px;}
     }
     .b-box{
-        display: flex; align-items: end;
+        display: flex;
+        justify-content: space-between;
         .box1{
-            .box1-1 p:nth-of-type(1){
-                display: flex;
-                align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            align-items: left;
+            .event{
+                height: 325px;
+                display: inline-block;
+                position: relative;
+                p{
+                    display: flex; align-items: start;
+                    position: absolute;
+                    left: 0; top: 0;
+                }
             }
             .bene-remote{
                 position: relative;
-                
             }
             .remote-pre{
                 position: absolute;
-                left: 220px; top: -45px;
+                left: 220px; top: -65px;
                 cursor: pointer;
             }
             .remote-next{
                 position: absolute;
-                left: 240px; top: -45px;
+                left: 240px; top: -65px;
                 cursor: pointer;
             }
             .remote-stop{
                 position: absolute;
-                left: 260px; top: -45px;
+                left: 260px; top: -65px;
                 cursor: pointer;
             }
             .remote-start{
                 position: absolute;
-                left: 280px; top: -45px;
+                left: 280px; top: -65px;
                 cursor: pointer;
             }
-            .bene-remote::before{
-                content: '';
+            .bene-remote span:nth-of-type(1){
+                display: inline-block;
                 width: 200px;
                 border-top: 2px solid $sl;
                 position: absolute;
-                top: -40px; left: 0;
+                top: -60px; left: 0;
             }
-            .bene-remote::after{
-                content: '';
-                width: 100px;
+            .bene-remote span:nth-of-type(2){
+                display: inline-block;
+                width: 200px;
                 border-top: 2px solid $mc;
                 position: absolute;
-                top: -40px; left: 0;
+                top: -60px; left: -50px;
+                transform: scaleX(50%);
             }
             .box1-2{
-                display: flex; 
+                display: flex;
                 p{
                     box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
                 }
