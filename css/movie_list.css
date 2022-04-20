@@ -82,6 +82,7 @@ input:focus, button:focus {
 }
 
 header {
+  min-width: 1140px;
   border-bottom: 1px solid #351F66;
   z-index: 9999;
 }

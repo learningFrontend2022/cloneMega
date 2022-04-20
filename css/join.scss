@@ -1,4 +1,91 @@
 @import '_common.scss';
 
-
 // main page
+main{
+    min-height: 100vh;
+    background-color: $fb;
+    .join{
+        width: 710px;
+        min-height: 100vh;
+        margin: 0 auto;
+        padding: 80px 100px;
+        background-color: #fff;
+    }
+    .join-tit{
+        h1{
+            text-align: center;
+            margin-bottom: 60px;
+        }
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        &::after{
+            content: '';
+            width: 100%;
+            border-top: 1px solid $sl;
+            position: absolute;
+            left: 0; bottom: 0;
+        }
+        p{
+            margin: 10px 0 20px;
+            color: $st;
+            font-size: 0.9em;
+        }
+        p.active{
+            color: $mc;
+            position: relative;
+            &::after{
+                content: '';
+                width: 100%;
+                border: 1px solid $mc;
+                position: absolute;
+                left: 0; bottom: -20px;
+                z-index: 2;
+            }
+        }
+    }
+    h2{
+        margin-top: 40px;
+        font-size: 1.6em;
+        font-weight: 400;
+    }
+    p{
+        color: $st;
+    }
+    .join-certification{
+        display: none;
+        li{
+            margin-left: 20px;
+            color: $st;
+            list-style-type: circle;
+        }
+        .certi-type{
+            display: flex;
+            justify-content: space-between;
+            button{
+                margin: 20px 0;
+                padding: 40px 80px;
+                border: 1px solid $st;
+                border-radius: 4px;
+                cursor: pointer;
+                img{
+                    margin-bottom: 10px;
+                }
+            }
+            button:hover{
+                opacity: .4;
+            }   
+        }
+    }
+    .join-certification.active{
+        display: block;
+    }
+    .join-agree{
+        display: none;
+    }
+    .join-agree.active{
+        display: block;
+    }
+}
