@@ -67,7 +67,7 @@ fetch("./js/main.json")
     elBenefit.innerHTML = eventBn;
 
     const elBene= document.querySelectorAll('.benefit .event p');
-    console.log(elBene)
+    // console.log(elBene)
     let num = elBenefit.children.length -1;
 
     let clear = function(){
