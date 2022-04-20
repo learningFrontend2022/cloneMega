@@ -696,7 +696,7 @@ main .join-certification {
 }
 
 main .join-certification li {
-  margin-left: 20px;
+  margin-left: 16px;
   color: #444444;
   list-style-type: circle;
 }
@@ -734,7 +734,96 @@ main .join-agree {
   display: none;
 }
 
+main .join-agree form {
+  margin: 20px 0;
+}
+
+main .join-agree form p {
+  margin: 20px 0 40px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+main .join-agree form p input {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  cursor: pointer;
+}
+
+main .join-agree form label {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+main .join-agree form span {
+  width: 100%;
+  height: 120px;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #E2E2E2;
+  overflow-y: scroll;
+  display: block;
+  color: #444444;
+  font-family: serif;
+}
+
+main .join-agree form .checkall {
+  position: relative;
+}
+
+main .join-agree form .checkall input {
+  top: 6px;
+}
+
+main .join-agree form .checkall label {
+  font-size: 1.2em;
+}
+
+main .join-agree form .checkall::after {
+  content: '';
+  width: 100%;
+  border-top: 1px solid #E2E2E2;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+main .join-agree form .necessary label {
+  color: #351F66;
+}
+
+main .join-agree form .submit {
+  text-align: center;
+}
+
+main .join-agree form .submit input {
+  width: 200px;
+  padding: 12px;
+  background-color: #E2E2E2;
+  color: #444444;
+  font-size: 1.2em;
+  -webkit-transform: translateX(70%);
+          transform: translateX(70%);
+}
+
 main .join-agree.active {
+  display: block;
+}
+
+main .join-input {
+  display: none;
+}
+
+main .join-input.active {
+  display: block;
+}
+
+main .join-finish {
+  display: none;
+}
+
+main .join-finish.active {
   display: block;
 }
 /*# sourceMappingURL=join.css.map */
