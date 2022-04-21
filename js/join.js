@@ -348,8 +348,10 @@ elFinalsub.onclick = function(e){
     e.preventDefault();
     if(inputTrue[0]==0){
         window.scrollTo({top : 0, behavior: 'smooth'});
-        alert('아이디 중복확인을 해주세요.');
         elId.style.border = `2px solid ${red}`;
+        if(elId.value != ''){
+            alert('아이디 중복확인을 해주세요.');
+        }
     }
     if(inputTrue[1]==0){
         window.scrollTo({top : 0, behavior: 'smooth'});
