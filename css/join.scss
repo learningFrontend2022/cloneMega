@@ -131,30 +131,137 @@ main{
                     color: $mc;
                 }
             }
-            .submit{
-                text-align: center;
-                input{
-                    width: 200px;
-                    padding: 12px;
-                    background-color: $sl;
-                    color: $st;
-                    font-size: 1.2em;
-                    transform: translateX(70%);
-                }
+            .submit input{
+                transform: translateX(70%);
             }
         }
     }
     .join-agree.active{
         display: block;
     }
+    .submit{
+        text-align: center;
+        input{
+            width: 200px;
+            padding: 12px;
+            background-color: $sl;
+            color: $st;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    }
     .join-input{
         display: none;
+        ul{
+            width: 100%;
+            margin: 16px 0 40px;
+            border-top: 1px solid $st;
+            li{
+                width: 100%;
+                padding: 24px;
+                border-bottom: 1px solid $sl;
+                position: relative;
+                label{
+                    width: 120px; height: 48px;
+                    padding: 16px 10px;
+                    background-color: $fb;
+                    color: $st;
+                    line-height: 1;
+                    position: absolute;
+                    left: 0; top: 0;
+                }
+                input{
+                    width: 280px;
+                    padding: 4px 8px;
+                    border: 1px solid $sl;
+                    position: absolute;
+                    left: 132px; top: 8px;
+                }
+                .id-check{
+                    padding: 6px 10px;
+                    background-color: $sl;
+                    border-radius: 4px;
+                    color: rgb(151, 151, 151);
+                    font-size: .8em;
+                    position: absolute;
+                    right: 16px; top: 9px;
+                cursor: pointer;
+                }
+            }
+        }
+        .marketing{
+            padding: 16px 20px;
+            border: 1px solid $sl;
+            border-radius: 8px;
+            h3{
+                padding-bottom: 12px;
+                font-size: 1.2em;
+                font-weight: 400;
+                color: $st;
+                position: relative;
+                &::after{
+                    content: '';
+                    width: calc(100% + 40px);
+                    border-top: 1px solid $sl;
+                    position: absolute;
+                    left: -20px; bottom: 0;
+                }
+            }
+            .marketing-agree{
+                padding: 20px 0 10px;
+                p{
+                    margin: 10px 0  32px;
+                }
+                b{
+                    color: $st;
+                    font-weight: 400;
+                }
+                span{
+                    display: inline-block;
+                    font-weight: 100;
+                }
+            }
+            .agree-bg{
+                padding: 14px 0;
+                border-radius: 4px;
+                background-color: $fb;
+                input{
+                    margin: 0 4px 0 20px;
+                }
+            }
+        }
+        .submit{
+            margin: 40px 0 0;
+        }
     }
     .join-input.active{
         display: block;
     }
     .join-finish{
         display: none;
+        margin: 100px 0;
+        text-align: center;
+        img{
+            width: 100px;
+        }
+        h2{
+            margin: 32px 0 10px;
+            color: $mc;
+            i{
+                font-style: normal;
+                font-size: 1em;
+            }
+        }
+        button{
+            width: 200px;
+            margin: 80px 0;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: $mc;
+            color: #fff;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
     }
     .join-finish.active{
         display: block;
