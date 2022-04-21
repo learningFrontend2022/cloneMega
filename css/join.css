@@ -851,6 +851,7 @@ main .join-input ul li input {
   position: absolute;
   left: 132px;
   top: 8px;
+  text-transform: none;
 }
 
 main .join-input ul li .id-check {
@@ -906,14 +907,29 @@ main .join-input .marketing .marketing-agree span {
   font-weight: 100;
 }
 
+main .join-input .marketing .alert {
+  color: #ac1010;
+  font-size: .8em;
+  display: none;
+}
+
+main .join-input .marketing .alert.on {
+  display: inline;
+}
+
 main .join-input .marketing .agree-bg {
   padding: 14px 0;
   border-radius: 4px;
   background-color: #f8f8fa;
 }
 
+main .join-input .marketing .agree-bg label {
+  cursor: pointer;
+}
+
 main .join-input .marketing .agree-bg input {
   margin: 0 4px 0 20px;
+  cursor: pointer;
 }
 
 main .join-input .submit {
