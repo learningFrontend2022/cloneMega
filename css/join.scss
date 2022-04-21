@@ -176,6 +176,7 @@ main{
                     border: 1px solid $sl;
                     position: absolute;
                     left: 132px; top: 8px;
+                    text-transform: none;
                 }
                 .id-check{
                     padding: 6px 10px;
@@ -221,12 +222,24 @@ main{
                     font-weight: 100;
                 }
             }
+            .alert{
+                color: #ac1010;
+                font-size: .8em;
+                display: none;
+            }
+            .alert.on{
+                display: inline;
+            }
             .agree-bg{
                 padding: 14px 0;
                 border-radius: 4px;
                 background-color: $fb;
+                label{
+                    cursor: pointer;
+                }
                 input{
                     margin: 0 4px 0 20px;
+                    cursor: pointer;
                 }
             }
         }

@@ -52,6 +52,7 @@ elCheckall.onclick = function all(){
         elCheck2.checked = true;
         elCheck3.checked = true;
         elCheck4.checked = true;
+        window.scrollBy({top : 1000, behavior: 'smooth'});
     }
 }
 elAll.onclick = function(){
@@ -67,6 +68,7 @@ elAll.onclick = function(){
         elCheck2.checked = true;
         elCheck3.checked = true;
         elCheck4.checked = true;
+        window.scrollBy({top : 1000, behavior: 'smooth'});
     }
 }
 
@@ -153,8 +155,11 @@ elCheck4.onclick = function(){
 
 elSubmit.onclick = function(e){
     e.preventDefault();
+    //스크롤 맨위로
+    window.scrollTo({top : 0, behavior: 'smooth'});
+
     if(!elCheck1.checked || !elCheck2.checked){
-        alert('필수 동의항목을 체크해 주세요.')
+        alert('필수 동의항목을 체크해 주세요.');
     }else{
         elStep3.classList.add('active');
         elInput.classList.add('active');
@@ -164,19 +169,220 @@ elSubmit.onclick = function(e){
 }
 
 //step3 정보입력
+
+const elId = document.querySelector('#id');
 const elIDcheck = document.querySelector('.id-check');
+const elPass = document.querySelector('#password');
+const elPasscheck = document.querySelector('#passagain');
+const elName = document.querySelector('#name');
+const elBirth = document.querySelector('#birth');
+const elEmail = document.querySelector('#email');
 const elFinalsub = document.querySelector('.join-input .submit input');
 
+let regId = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,12}$/; 
+let regPass = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{4,20}$/;
+let regEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+
+let purple = "#351F66";
+let blue = "#027B94";
+let red = "#ac1010";
+
+let inputTrue = [0,0,0,0,0,0];
+
+elId.onkeyup=function(){
+    if(regId.test(elId.value)){
+        elId.style.border = `2px solid ${blue}`;
+        elIDcheck.style.backgroundColor = purple;
+        elIDcheck.style.color = "#fff";
+    }else{
+        elId.style.border = `2px solid ${red}`;
+        inputTrue[0] = 0;
+    }
+}
 elIDcheck.onclick = function(e){
     e.preventDefault();
+    if(regId.test(elId.value)){
+        alert('확인되었습니다.');
+        elId.style.border = `2px solid ${blue}`;
+        inputTrue[0] = 1;
+    }else{
+        alert('영문, 숫자 8~12자를 조합해 입력해주십시오.');
+        inputTrue[0] = 0;
+    }
+}
+elPass.onkeyup = function(){
+    if(regPass.test(elPass.value)){
+        elPass.style.border = `2px solid ${blue}`;
+        inputTrue[1] = 1;
+    }else{
+        elPass.style.border = `2px solid ${red}`;
+        inputTrue[1] = 0;
+    }
+}
+elPasscheck.onkeyup = function(){
+    if(elPasscheck.value == elPass.value){
+        elPasscheck.style.border = `2px solid ${blue}`;
+        inputTrue[2] = 1;
+    }else{
+        elPasscheck.style.border = `2px solid ${red}`;
+        inputTrue[2] = 0;
+    }
+}
+elName.onkeydown = function(){
+    if(elName.value != ''){
+        inputTrue[3] = 1;
+        elName.style.border = `2px solid ${blue}`;
+    }else{
+        inputTrue[3] = 0;
+        elName.style.border = `2px solid ${red}`;
+    }
+}
+// 생년월일 날짜 비교
+let date = new Date();
+let mon = '';
+function month(m){
+    if(m<9){
+        return mon = `0${m+1}`;
+    }else{
+        return mon = `${m+1}`;
+    }
+}
+
+month(date.getMonth());
+
+let today = `${date.getFullYear()}-${mon}-${date.getDate()}`;
+
+elBirth.onchange = function(){
+    if(elBirth.value != '' && elBirth.value <= today){
+        inputTrue[4] = 1;
+        elBirth.style.border = `2px solid ${blue}`;
+    }else if(elBirth.value == '' || elBirth.value > today){
+        inputTrue[4] = 0;
+        elBirth.style.border = `2px solid ${red}`;
+    }
+}
+
+elEmail.onkeyup = function(){
+    if(regEmail.test(elEmail.value)){
+        elEmail.style.border = `2px solid ${blue}`;
+        inputTrue[5] = 1;
+    }else{
+        elEmail.style.border = `2px solid ${red}`;
+        inputTrue[5] = 0;
+    }
+}
+
+// 마켓팅 수신동의
+const elYes = document.querySelector('#yes');
+const elYeslabel = document.querySelector('.yes');
+const elNo = document.querySelector('#no');
+const elNolabel = document.querySelector('.no');
+const elAlarm = document.querySelector('#alarm');
+const elSms = document.querySelector('#sms');
+const elToemail = document.querySelector('#toemail');
+const elAlert = document.querySelector('.marketing .alert');
+
+elYeslabel.onclick = function(){
+    elYes.checked = true;
+    elNo.checked = false;
+
+    elAlarm.checked = true;
+    elSms.checked = true;
+    elToemail.checked = true;
+}
+elYes.onclick = function(){
+    elNo.checked = false;
+
+    elAlarm.checked = true;
+    elSms.checked = true;
+    elToemail.checked = true;
+}
+elNolabel.onclick = function(){
+    elYes.checked = false;
+    elNo.checked = true;
+
+    elAlarm.checked = false;
+    elSms.checked = false;
+    elToemail.checked = false;
+}
+elNo.onclick = function(){
+    elYes.checked = false;
+
+    elAlarm.checked = false;
+    elSms.checked = false;
+    elToemail.checked = false;
+}
+
+elAlarm.onclick = function(){
+    if(!elAlarm.checked && !elSms.checked && !elToemail.checked){
+        elAlert.classList.add('on');
+    }else if(elAlarm.checked || elSms.checked || elToemail.checked){
+        elAlert.classList.remove('on');
+    }
+}
+elSms.onclick = function(){
+    if(!elAlarm.checked && !elSms.checked && !elToemail.checked){
+        elAlert.classList.add('on');
+    }else if(elAlarm.checked || elSms.checked || elToemail.checked){
+        elAlert.classList.remove('on');
+    }
+}
+elToemail.onclick = function(){
+    if(!elAlarm.checked && !elSms.checked && !elToemail.checked){
+        elAlert.classList.add('on');
+    }else if(elAlarm.checked || elSms.checked || elToemail.checked){
+        elAlert.classList.remove('on');
+    }
+}
+// 회원가입 버튼
+function final(){
+    elStep3.classList.remove('active');
+    elInput.classList.remove('active');
+    elStep4.classList.add('active');
+    elFinish.classList.add('active');
+
 
 }
 elFinalsub.onclick = function(e){
     e.preventDefault();
-    elStep3.classList.remove('active');
-    elInput.classList.remove('active');
-    elStep4.classList.add('active');
-    elFinish.classList.add('active')
+    if(inputTrue[0]==0){
+        window.scrollTo({top : 0, behavior: 'smooth'});
+        alert('아이디 중복확인을 해주세요.');
+        elId.style.border = `2px solid ${red}`;
+    }
+    if(inputTrue[1]==0){
+        window.scrollTo({top : 0, behavior: 'smooth'});
+        elPass.style.border = `2px solid ${red}`;
+    }
+    if(inputTrue[2]==0){
+        window.scrollTo({top : 0, behavior: 'smooth'});
+        elPasscheck.style.border = `2px solid ${red}`;
+    }
+    if(inputTrue[3]==0){
+        window.scrollTo({top : 0, behavior: 'smooth'});
+        elName.style.border = `2px solid ${red}`;
+    }
+    if(inputTrue[4]==0){
+        window.scrollTo({top : 0, behavior: 'smooth'});
+        elBirth.style.border = `2px solid ${red}`;
+    }
+    if(inputTrue[5]==0){
+        window.scrollTo({top : 0, behavior: 'smooth'});
+        elEmail.style.border = `2px solid ${red}`;
+    }
+    // 항목을 모두 기입하고 나서
+    if(inputTrue[0]==1 && inputTrue[1]==1 && inputTrue[2]==1 && inputTrue[3]==1 && inputTrue[4]==1 && inputTrue[5]==1){
+        if(elYes.checked){
+            if(!elAlarm.checked && !elSms.checked && !elToemail.checked){
+                alert('마켓팅 수신 수단 1가지 이상 체크해주세요.');
+            }else if(elAlarm.checked || elSms.checked || elToemail.checked){
+                final();
+            }
+        }else{
+            final();
+        }
+    }
 }
 
 // step4 가입완료
