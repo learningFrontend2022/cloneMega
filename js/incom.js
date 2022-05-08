@@ -20,11 +20,12 @@ fetch("./incom.html")
     const elMycontents = document.querySelector('.my-contents');
     const elSearch = document.querySelector('.search');
     const elSearchcon = document.querySelector('.search-contents');
+    const elSearchList = document.querySelector('.rank-list');
+    const elSearchImg = document.querySelector('.no1-img img');
     const elLogin = document.querySelector('.m-login');
     const elLog = document.querySelector('.login');
     const elClose = document.querySelector('.log-close');
     const elMyLog = document.querySelector('.my-contents button');
-    const elSearchList = document.querySelector('.rank-list');
 
     // 검색 데이터 비동기 처리
     let searchBar = function(){
@@ -34,6 +35,7 @@ fetch("./incom.html")
         })
         .then(function(data){
             let rankList = '';
+            let rankImg = data.data[0].image;
             for(let i=0; i<5; i++){
                 rankList += `
                     <p>
@@ -43,6 +45,7 @@ fetch("./incom.html")
                 `;
             }
             elSearchList.innerHTML=rankList;
+            elSearchImg.src = rankImg;
         })
     }
 
