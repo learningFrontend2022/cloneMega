@@ -198,6 +198,8 @@ elId.onkeyup=function(){
     }else{
         elId.style.border = `2px solid ${red}`;
         inputTrue[0] = 0;
+        elIDcheck.style.backgroundColor = "#E2E2E2";
+        elIDcheck.style.color = "#444444";
     }
 }
 elIDcheck.onclick = function(e){

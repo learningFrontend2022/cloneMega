@@ -1,5 +1,4 @@
 const elBody = document.querySelector('body');
-
 // header, footer 불러오기
 fetch("./incom.html")
 .then(function(response) {
@@ -25,6 +24,27 @@ fetch("./incom.html")
     const elLog = document.querySelector('.login');
     const elClose = document.querySelector('.log-close');
     const elMyLog = document.querySelector('.my-contents button');
+    const elSearchList = document.querySelector('.rank-list');
+
+    // 검색 데이터 비동기 처리
+    let searchBar = function(){
+        fetch("./js/movie_list.json")
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            let rankList = '';
+            for(let i=0; i<5; i++){
+                rankList += `
+                    <p>
+                        <i>${i+1}</i>
+                        <span>${data.data[i].movieNm}</span>
+                    </p>
+                `;
+            }
+            elSearchList.innerHTML=rankList;
+        })
+    }
 
     // 버거메뉴
     elBurger.onclick = function(){
@@ -63,6 +83,7 @@ fetch("./incom.html")
     }
     // 검색
     elSearch.onclick = function(){
+        searchBar()
         elSearch.classList.toggle('active');
         elSearchcon.classList.toggle('active');
         elMy.classList.remove('active');
