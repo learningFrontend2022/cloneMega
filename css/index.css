@@ -340,15 +340,97 @@ header .my-contents.active {
 header .search-contents {
   width: 100%;
   min-width: 1140px;
-  height: 300px;
   padding: 60px;
   background-color: #351F66;
-  text-align: center;
   position: absolute;
   left: 0;
   top: 80px;
   z-index: 10000;
   display: none;
+}
+
+header .search-contents .rank-tit {
+  margin-bottom: 20px;
+  display: inline-block;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+header .search-contents .search-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+header .search-contents .no1-img {
+  width: 150px;
+}
+
+header .search-contents .no1-img img {
+  width: 100%;
+}
+
+header .search-contents .rank-list {
+  margin-left: 60px;
+  color: #fff;
+}
+
+header .search-contents .rank-list p {
+  margin-bottom: 12px;
+}
+
+header .search-contents .rank-list i {
+  margin-right: 12px;
+  font-size: 1.4em;
+  white-space: nowrap;
+}
+
+header .search-contents .rank-list span {
+  display: inline-block;
+  width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+header .search-contents .search-bar {
+  position: absolute;
+  left: 50%;
+  top: 80px;
+}
+
+header .search-contents .search-bar input {
+  width: 400px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 1.2em;
+  text-transform: none;
+}
+
+header .search-contents .search-bar input::-webkit-input-placeholder {
+  color: #fff;
+  font-weight: 100;
+}
+
+header .search-contents .search-bar input:-ms-input-placeholder {
+  color: #fff;
+  font-weight: 100;
+}
+
+header .search-contents .search-bar input::-ms-input-placeholder {
+  color: #fff;
+  font-weight: 100;
+}
+
+header .search-contents .search-bar input::placeholder {
+  color: #fff;
+  font-weight: 100;
+}
+
+header .search-contents .search-bar button {
+  cursor: pointer;
 }
 
 header .search-contents.active {
