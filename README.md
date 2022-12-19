@@ -10,7 +10,7 @@
 
 Javascript, jQuery, SCSS, HTML을 이용해 만들었으며 개발에 보다 집중할 수 있도록 기존의 영화관 사이트를 참고하여 제작했습니다.
 
-팀원들과 함께 직접 사용자 접근 프로세스와 서비스를 분석하였습니다. [분석보기](https://docs.google.com/presentation/d/1dl3wZvm6g5IJBasCjqf4pX0QZaRuS5CFcLBtw18yxvU/edit#slide=id.g103bbf5ba97_17_74)
+팀원들과 함께 직접 사용자 접근 프로세스와 서비스를 분석하였습니다.
 
 영화 정보, 예매, 스토어, 로그인, 회원가입으로 기능을 단축하여 그에 맞게 컨텐츠를 재구성하였습니다.
 
